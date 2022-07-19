@@ -1,0 +1,31 @@
+{
+  "upVotes": 5,
+  "downVotes": 1,
+  "noOfAnswers": 3,
+  "questionTitle": "What is Object in JS",
+  "questionBody": "kindly define and give example for object",
+  "questionTags": ["js"],
+  "userPosted": "Sathya",
+  "askedOn": "jan 2 2022",
+  "userPostedId": "62d53a3a7e93b4615519f329"}
+  "answer": [
+    {
+      "answerBody": "Object is a real time entity",
+      "userAnswered": "Boopathi",
+      "answeredon": "jan 3 2022",
+      "userAnsweredId": "62d53f9d7e93b4615519f32a"
+    },
+    {
+      "answerBody": "Object is a key value pair",
+      "userAnswered": "Suganya",
+      "answeredon": "jan 4 2022",
+      "userAnsweredId": "62d5406572509d6c984d4507"
+    },
+    {
+      "answerBody": "Object is instance of a class",
+      "userAnswered": "iniyan",
+      "answeredon": "jan 4 2022",
+      "userAnsweredId": "62d545bb11c06147338fa78a"
+    }
+  ]
+}
