@@ -21,6 +21,19 @@ export async function createQuestionlist(data) {
   //db.users.insertOne(data);
 return await client.db("guvi-node-app").collection("stack-questions").insertMany(data);
 }
+export async function createQuestion(data) {
+  //db.users.insertOne(data);
+return await client.db("guvi-node-app").collection("stack-questions").insertOne(data);
+}
+export async function createUserlist(data) {
+  //db.users.insertOne(data);
+return await client.db("guvi-node-app").collection("stack-all-users").insertMany(data);
+}
+export async function getUserlist(data) {
+  //db.users.insertOne(data);
+return await client.db("guvi-node-app").collection("stack-all-users").find({}).toArray();
+}
+
 export async function getAllQuestions() {
   //db.users.findOne({username: username });
 return await client.db("guvi-node-app").collection("stack-questions").find({}).toArray();

@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import bcrypt from "bcrypt";
 import {createUser,getUserByName} from "./helper.js";
-import{createQuestionlist,getAllQuestions} from "./helper.js";
+import{createQuestionlist,getAllQuestions,createUserlist,getUserlist,createQuestion} from "./helper.js";
 dotenv.config();
 
 
@@ -80,37 +80,24 @@ app.post('/signup',async function (request, response) {
         }
       }
   })
-  app.post('/askQuestion',async function (request, response) {
+  app.post('/askQuestions',async function (request, response) {
     const data =request.body;
-
-    // const questionFromDB = await getQuestionByTitle(questionTitle);
-
-    // if(questionFromDB){
-    //   response.status(400).send({message:"Question already available"});
-    // }
-    // else{ 
-      // const userFromDB = await getUserByName(UserName);
-    //   const data = {
-    //     "upVotes": 0,
-    //     "downVotes": 0,
-    //     "noOfAnswers": 0,
-    //     "questionTitle": questionTitle,
-    //     "questionBody": questionBody,
-    //     "questionTags": questionTags,
-    //    "userPosted": userFromDB.UserName,
-    //     "askedOn": newDate(),
-    //     "userPostedId":userFromDB._id,
-    //     "answer": [{
-    //       "answerBody": "",       
-    //       "userAnswered": "",
-    //       "answeredon": "",
-    //       "userAnsweredId":"" ,
-    // }]
-    //   };
      const result=await createQuestionlist(data);
      response.send(result);
-      
-    // }
+})
+app.post('/askQuestion',async function (request, response) {
+  const data =request.body;
+   const result=await createQuestion(data);
+   response.send(result);
+})
+app.post('/createAllUsers',async function (request, response) {
+  const data =request.body;
+   const result=await createUserlist(data);
+   response.send(result);
+})
+app.get('/getAllUsers',async function (request, response) {
+   const result=await getUserlist();
+   response.send(result);
 })
 
 app.get('/questionsList',async function (request, response) {
