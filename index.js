@@ -9,7 +9,7 @@ dotenv.config();
 
 
 const app = express();
-const PORT= process.env.PORT;
+//const PORT= process.env.PORT;
 app.use(express.json());
 app.use(cors());
 
@@ -26,7 +26,7 @@ async function createConnection(){
 
 export const client=await createConnection();
 
-app.listen(PORT,()=>console.log("Server started in port number:",PORT))
+app.listen(process.env.PORT || 4000,()=>console.log("Server started in port number:"))
 
 async function generateHashedPassword(password){
   const NO_OF_ROUNDS = 10 ; //Number of rounds of salting
